@@ -1,0 +1,47 @@
+﻿@model List<CQRSDesignePattern.CQRSPattern.Results.GetProductQueryResult>
+
+@{
+    Layout = null;
+}
+
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<div class="container" >
+    <br />
+    <table class="table table-bordered table-hover ">
+      
+            <tr>
+                <th>#</th>
+                <th>Adı</th>
+                <th>Fiyat</th>
+                <th>Stok</th>
+                <th>Getir</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+            </tr>
+        
+            @foreach (var product in Model)
+            {
+                <tr >
+                    <td>@product.ID</td>
+                    <td>@product.ProductName</td>
+                    <td>@product.Price</td>
+                    <td>@product.Stock</td>
+                    <td>
+                         <a href="@Url.Action("GetProduct", "Default", new { id = product.ID })" class="btn btn-dark">Getir</a>
+                    </td>
+                    <td>
+                         <a href="@Url.Action("DeleteProduct", "Default", new { id = product.ID })" class="btn btn-danger">Sil</a>
+                    </td>
+                    <td>
+                         <a href="@Url.Action("UpdateProduct", "Default", new { id = product.ID })" class="btn btn-primary">Güncelle</a>
+                    </td>
+                </tr>
+            } 
+      
+        </table>
+    <a href="@Url.Action("AddProduct", "Default")" class="btn btn-success">Ekle</a>
+
+</div>
