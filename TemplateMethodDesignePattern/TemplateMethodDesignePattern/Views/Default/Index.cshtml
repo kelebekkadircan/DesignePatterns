@@ -1,0 +1,75 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<div class="container">
+    <br />
+    <table class="table table-bordered table-hover ">
+
+        <tr>
+            <th>Adı</th>
+            <th>Kullanabilir Kişi Sayısı</th>
+            <th>Fiyat</th>
+            <th>Çözünürlük</th>
+            <th>İçerik</th>
+            <th>Güncelle</th>
+        </tr>
+
+      
+            <tr>
+             <td>@ViewBag.v1</td>
+            <td>@ViewBag.v2</td>
+            <td>@ViewBag.v3</td>
+            <td>@ViewBag.v4</td>
+            <td>@ViewBag.v5</td>
+                <td>
+                    <a  class="btn btn-primary">Güncelle</a>
+                </td>
+            </tr>
+
+        <tr>
+            <td>@ViewBag.v6</td>
+            <td>@ViewBag.v7</td>
+            <td>@ViewBag.v8</td>
+            <td>@ViewBag.v9</td>
+            <td>@ViewBag.v10</td>
+            <td>
+                <a class="btn btn-primary">Güncelle</a>
+            </td>
+        </tr>
+
+    </table>
+@* 
+    <table class="table table-bordered table-hover ">
+
+        <tr>
+            <th>Adı</th>
+            <th>Kullanabilir Kişi Sayısı</th>
+            <th>Fiyat</th>
+            <th>Çözünürlük</th>
+            <th>İçerik</th>
+            <th>Güncelle</th>
+        </tr>
+
+
+        <tr>
+            <td>@ViewBag.v6</td>
+            <td>@ViewBag.v7</td>
+            <td>@ViewBag.v8</td>
+            <td>@ViewBag.v9</td>
+            <td>@ViewBag.v10</td>
+            <td>
+                <a class="btn btn-primary">Güncelle</a>
+            </td>
+        </tr>
+
+
+    </table>
+ *@
+    <a href="@Url.Action("AddProduct", "Default")" class="btn btn-success">Ekle</a>
+
+</div>

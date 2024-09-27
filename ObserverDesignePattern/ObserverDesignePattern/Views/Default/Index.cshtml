@@ -1,0 +1,165 @@
+﻿@* @model RegisterViewModel
+
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<div class="container" >
+    <br />
+    <form method="post" >
+   
+        <label>Adınız</label>
+        <input type="text" asp-for="Name" class="form-control" />
+        <br/>
+        <label>Soyadınız</label>
+        <input type="text" asp-for="Surname" class="form-control" />
+        <br />
+        <label>Mail Adresiniz</label>
+        <input type="text" asp-for="Email" class="form-control" />
+        <br />
+        <label>Kullanıcı Adınız</label>
+        <input type="text" asp-for="Username" class="form-control" />
+        <br />
+        <label>Şifreniz</label>
+        <input type="password" asp-for="Password"form-control" />
+        <br />
+
+
+
+    </form>
+
+</div>
+ *@
+
+
+ @model RegisterViewModel
+
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/lib/fontawesome/css/all.min.css" rel="stylesheet" />
+
+<style>
+    body {
+        background: linear-gradient(135deg, #1f4037, #99f2c8);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .register-form {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        padding: 30px;
+        max-width: 400px;
+        width: 100%;
+    }
+
+        .register-form h2 {
+            font-family: 'Arial', sans-serif;
+            color: #1f4037;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+    .form-control {
+        border-radius: 15px;
+        padding: 15px 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+        .form-control:focus {
+            border-color: #99f2c8;
+            box-shadow: 0 0 10px #99f2c8;
+        }
+
+    .btn-custom {
+        background: #1f4037;
+        color: white;
+        border-radius: 25px;
+        padding: 10px 15px;
+        width: 100%;
+        transition: background 0.3s ease;
+    }
+
+        .btn-custom:hover {
+            background: #99f2c8;
+            color: #1f4037;
+        }
+
+    .social-login {
+        display: flex;
+        justify-content: space-between;
+    }
+
+        .social-login a {
+            text-decoration: none;
+            color: white;
+            border-radius: 25px;
+            padding: 10px 15px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            width: 48%;
+            text-align: center;
+            font-size: 14px;
+        }
+
+            .social-login a.facebook {
+                background: #4267B2;
+            }
+
+            .social-login a.google {
+                background: #DB4437;
+            }
+
+            .social-login a:hover {
+                opacity: 0.8;
+            }
+
+</style>
+
+<div class="register-form">
+    <h2>Kayıt Ol</h2>
+
+    <form method="post">
+
+        <label>Adınız</label>
+        <input type="text" asp-for="Name" class="form-control" placeholder="Adınızı giriniz" />
+
+        <label>Soyadınız</label>
+        <input type="text" asp-for="Surname" class="form-control" placeholder="Soyadınızı giriniz" />
+
+        <label>Mail Adresiniz</label>
+        <input type="text" asp-for="Email" class="form-control" placeholder="Mail adresinizi giriniz" />
+
+        <label>Kullanıcı Adınız</label>
+        <input type="text" asp-for="Username" class="form-control" placeholder="Kullanıcı adınızı giriniz" />
+
+        <label>Şifreniz</label>
+        <input type="password" asp-for="Password" class="form-control" placeholder="Şifrenizi giriniz" />
+
+        <button type="submit" class="btn btn-custom mt-3">Kayıt Ol</button>
+
+        <div class="social-login">
+            <a href="#" class="facebook">
+                <i class="fab fa-facebook-f"></i> Facebook ile Kayıt Ol
+            </a>
+            <a href="#" class="google">
+                <i class="fab fa-google"></i> Google ile Kayıt Ol
+            </a>
+        </div>
+    </form>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>

@@ -6,7 +6,7 @@ namespace DesignePatternChainOfResponsibility.DAL
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=DESKTOP-KQ16HG1;initial catalog=DesignePatternOne; integrated security=true;"); 
+            optionsBuilder.UseSqlServer("server=DESKTOP-KQ16HG1;initial catalog=ChainOfResponsibility; integrated security=true;"); 
         }
 
         public DbSet<CustomerProcess> CustomerProcesses { get; set; }
