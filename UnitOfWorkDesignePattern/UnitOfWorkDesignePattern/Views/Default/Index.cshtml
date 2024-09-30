@@ -1,0 +1,122 @@
+﻿@* @model CustomerViewModel
+
+@{
+    Layout = null;
+}
+
+
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<form method="post">
+    <label>Gönderici ID</label>
+    <input type="text" asp-for="SenderID" class="form-control" />
+    <br/> 
+    <label>Alıcı ID</label>
+    <input type="text" asp-for="ReceiverID" class="form-control" />
+    <br/>
+    <label>Miktar</label>,
+    <input type="text" asp-for="Amount" class="form-control" />
+    <br/>
+
+    <button type="submit" class="btn btn-primary">Gönder</button>
+
+
+</form>
+
+
+
+ *@
+
+
+ @model CustomerViewModel
+
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<style>
+    body {
+        background-color: #f8f9fa; /* Açık gri arka plan */
+        color: #212529; /* Koyu metin rengi */
+    }
+
+    .card {
+        border: none;
+        border-radius: 10px;
+        background-color: #ffffff; /* Beyaz arka plan */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+    }
+
+    .card-header {
+        background-color: #0d6efd; /* Mavi başlık */
+        color: #ffffff; /* Beyaz yazı */
+        border-bottom: none;
+        text-transform: uppercase; /* Başlığı büyük harf yapma */
+    }
+
+    .form-label {
+        color: #495057; /* Gri yazı rengi */
+        font-weight: 600;
+    }
+
+    .form-control {
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        background-color: #f8f9fa; /* Açık gri input alanı */
+    }
+
+    .form-control:focus {
+        border-color: #0d6efd; /* Mavi sınır */
+        box-shadow: none;
+    }
+
+    .btn-submit {
+        background-color: #0d6efd; /* Mavi buton */
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+
+    .btn-submit:hover {
+        background-color: #084298; /* Daha koyu mavi */
+    }
+</style>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h5>Transfer Formu</h5>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="mb-4">
+                            <label for="SenderID" class="form-label">Gönderici ID</label>
+                            <input type="text" asp-for="SenderID" class="form-control" id="SenderID" placeholder="Gönderici ID'yi girin" />
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="ReceiverID" class="form-label">Alıcı ID</label>
+                            <input type="text" asp-for="ReceiverID" class="form-control" id="ReceiverID" placeholder="Alıcı ID'yi girin" />
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="Amount" class="form-label">Miktar</label>
+                            <input type="text" asp-for="Amount" class="form-control" id="Amount" placeholder="Miktarı girin" />
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-submit">Gönder</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
