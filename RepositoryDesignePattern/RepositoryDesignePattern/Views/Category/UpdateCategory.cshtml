@@ -1,0 +1,95 @@
+﻿@model RepositoryDP.EntityLayer.Concrete.Category
+
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<style>
+    body {
+        background-color: #f5f5f5; /* Açık gri arka plan */
+        color: #212529; /* Siyah metin rengi */
+    }
+
+    .card {
+        border: none;
+        border-radius: 10px;
+        background-color: #ffffff; /* Beyaz arka plan */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+        animation: fadeIn 1s ease-in-out; /* Fade in animasyonu */
+    }
+
+    .card-header {
+        background-color: #333333; /* Koyu gri başlık */
+        color: #ffffff; /* Beyaz yazı */
+        text-align: center;
+        text-transform: uppercase;
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    .form-label {
+        color: #333333; /* Koyu gri yazı rengi */
+        font-weight: bold;
+    }
+
+    .form-control {
+        border: 1px solid #ccc; /* Gri sınır */
+        border-radius: 5px;
+        background-color: #f5f5f5; /* Açık gri input alanı */
+    }
+
+    .form-control:focus {
+        border-color: #333333; /* Koyu gri odaklanma efekti */
+        box-shadow: none;
+    }
+
+    .btn-submit {
+        background-color: #333333; /* Koyu gri buton */
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: background-color 0.3s ease-in-out; /* Yumuşak geçiş efekti */
+    }
+
+    .btn-submit:hover {
+        background-color: #555555; /* Daha açık gri hover efekti */
+    }
+
+   
+
+    .fade-in {
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .container {
+        margin-top: 50px;
+    }
+</style>
+
+<div class="container fade-in">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    Kategori Güncelle
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="mb-4">
+                            <label for="CategoryName" class="form-label">Kategori Adı</label>
+                            <input type="text" asp-for="CategoryName" class="form-control" id="CategoryName" placeholder="Kategori adını girin" />
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-submit">Güncelle</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

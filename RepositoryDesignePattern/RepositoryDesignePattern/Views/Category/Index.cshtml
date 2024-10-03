@@ -1,0 +1,141 @@
+﻿@* @model List<RepositoryDP.EntityLayer.Concrete.Category>
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<div class="container" >
+    <br/>
+    <table class="table table-bordered" >
+        <tr>
+            <th>#</th>
+            <th>Kategori Adı</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+          <tr>
+              <td>@item.CategoryID</td>
+              <td>@item.CategoryName</td>
+              <td>
+                <a href="/Category/DeleteCategory/@item.CategoryID"  class="btn btn-danger" >
+                    Sil
+                </a>
+              </td>
+              <td>
+                <a href="/Category/UpdateCategory/@item.CategoryID"  class="btn btn-success" >
+                    Güncelle
+                </a>
+              </td>
+          </tr>
+        }
+    </table>
+    <a href="/Category/AddCategory" class="btn btn-primary" >Kategori Ekle</a>
+
+</div> *@
+
+              @model List<RepositoryDP.EntityLayer.Concrete.Category>
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<style>
+    body {
+        background-color: #f8f9fa; /* Açık gri arka plan */
+        color: #212529; /* Koyu metin rengi */
+    }
+
+    .table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #dee2e6; /* Gri alt çizgi */
+    }
+
+    th {
+        background-color: #0d6efd; /* Mavi başlık arka planı */
+        color: #ffffff; /* Beyaz yazı rengi */
+        text-transform: uppercase; /* Büyük harf yapma */
+    }
+
+    .btn {
+        border-radius: 5px; /* Yuvarlak köşeler */
+        font-weight: bold;
+    }
+
+    .btn-danger {
+        background-color: #dc3545; /* Kırmızı */
+        color: #ffffff;
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333; /* Daha koyu kırmızı */
+        }
+
+    .btn-success {
+        background-color: #198754; /* Yeşil */
+        color: #ffffff;
+    }
+
+        .btn-success:hover {
+            background-color: #157347; /* Daha koyu yeşil */
+        }
+
+    .btn-primary {
+        background-color: #0d6efd; /* Mavi */
+        color: #ffffff;
+    }
+
+        .btn-primary:hover {
+            background-color: #084298; /* Daha koyu mavi */
+        }
+
+    .container {
+        margin-top: 50px; /* Üst boşluk */
+    }
+</style>
+
+<div class="container">
+    <h2 class="text-center">Kategoriler</h2>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Kategori Adı</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.CategoryID</td>
+                    <td>@item.CategoryName</td>
+                    <td>
+                        <a href="/Category/DeleteCategory/@item.CategoryID" class="btn btn-danger">
+                            Sil
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/Category/UpdateCategory/@item.CategoryID" class="btn btn-success">
+                            Güncelle
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="text-center">
+        <a href="/Category/AddCategory" class="btn btn-primary">Kategori Ekle</a>
+    </div>
+</div>
