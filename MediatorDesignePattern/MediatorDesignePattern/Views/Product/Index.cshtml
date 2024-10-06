@@ -1,0 +1,145 @@
+﻿@* @using MediatorDesignePattern.MediatorPattern.Results
+
+@model List<GetAllProductQueryResult>
+
+
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<table class="table table-bordered" > 
+        <tr>
+            <th>#</th>
+            <th>Ürün Adı</th>
+            <th>Ürün Fiyatı</th>
+            <th>Ürün Stok Sayısı</th>
+            <th>Ürün Stok Türü</th>
+            <th>Kategorisi</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+            
+        @foreach (var item in Model)
+        {
+        <tr>
+            <th>@item.ProductID</th>
+            <th>@item.ProductName</th>
+            <th>@item.ProductPrice</th>
+            <th>@item.ProductStock </th>
+            <th>@item.ProductStockType</th>
+            <th>@item.ProductCategory</th>
+            <th>
+                <a href="@Url.Action("Delete", "Product", new { id = item.ProductID })" class="btn btn-danger">Sil</a>
+            </th>
+            <th>
+                <a href="@Url.Action("Update", "Product", new { id = item.ProductID })" class="btn btn-warning">Güncelle</a>
+            </th>
+        </tr>
+        }
+
+</table>
+
+ *@
+
+
+
+            @using MediatorDesignePattern.MediatorPattern.Results
+@model List<GetAllProductQueryResult>
+
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<link href="~/css/custom.css" rel="stylesheet" /> <!-- Özel stiller için ayrı bir CSS dosyası -->
+
+<style>
+    /* custom.css */
+
+    body{
+        background-color :darkgray;
+    }
+
+    .table {
+        background-color: #333333;
+        color: #ffffff;
+        border-radius: 8px;
+    }
+
+        .table th, .table td {
+            padding: 15px;
+            vertical-align: middle;
+        }
+
+    .table-hover tbody tr:hover {
+        background-color: #444444;
+    }
+
+    .btn-danger, .btn-warning {
+        transition: all 0.3s ease;
+    }
+
+        .btn-danger:hover, .btn-warning:hover {
+            transform: scale(1.05);
+        }
+
+    h2 {
+        color: #ffffff;
+    }
+
+</style>
+
+
+<div class="container my-4 " >
+    <h2 class="text-center text-light mb-4">Ürün Listesi</h2>
+
+    <table class="table table-hover table-striped table-bordered" style="background-color:darkolivegreen; color: #fff;">
+        <thead class="thead-dark">
+            <tr>
+                <th>#</th>
+                <th>Ürün Adı</th>
+                <th>Ürün Fiyatı</th>
+                <th>Ürün Stok Sayısı</th>
+                <th>Ürün Stok Türü</th>
+                <th>Kategorisi</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+                <th>Detaylar</th>
+            </tr>
+        </thead>
+        <tbody class="color:#fff;" >
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ProductID</td>
+                    <td>@item.ProductName</td>
+                    <td>@item.ProductPrice</td>
+                    <td>@item.ProductStock</td>
+                    <td>@item.ProductStockType</td>
+                    <td>@item.ProductCategory</td>
+                    <td>
+                        <a href="@Url.Action("RemoveProduct", "Product", new { id = item.ProductID })" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i> Sil
+                        </a>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("UpdateProduct", "Product", new { id = item.ProductID })" class="btn btn-warning btn-sm">
+                            <i class="fas fa-edit"></i> Güncelle
+                        </a>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("GetProduct", "Product", new { id = item.ProductID })" class="btn btn-success btn-sm">
+                            <i class="fas fa-edit"></i> Detaylar
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a href="@Url.Action("AddProduct", "Product")" class="btn btn-primary btn-lg">
+        <i class="fas fa-plus"></i> Yeni Ürün Ekle
+        </a>
+</div>
