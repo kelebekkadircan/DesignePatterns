@@ -1,0 +1,11 @@
+﻿namespace IteratorDP.IteratorPattern
+{
+    public class VisitorRoute
+    {
+        public string Country { get; set; }
+
+        public string City { get; set; }
+
+        public string Place { get; set; }
+    }
+}
